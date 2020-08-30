@@ -10,6 +10,9 @@ namespace TestTaskForINFOTECH.Services
     public class CarOwnerRepository
     {
         CarOwnerContext context;
+        public CarOwnerRepository()
+        {
+        }
         public CarOwnerRepository(CarOwnerContext context)
         {
             this.context = context;
