@@ -14,6 +14,7 @@ namespace TestTaskForINFOTECH.Models
         }
         public int Id { get; set; }
         [Required]
+        [StringLength(17, MinimumLength = 17)]
         public string VIN { get; set; }
         [Required]
         [StringLength(8, MinimumLength = 3)]
