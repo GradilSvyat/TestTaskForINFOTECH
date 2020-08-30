@@ -21,15 +21,11 @@ namespace TestTaskForINFOTECH.Services
         }
         public virtual List<Owner> OwnersByCar (string carNumber)
         {
-            var car = context.Cars.First(p => p.CarNumber == carNumber).Id;
-            var owners = context.Owners.Include(cw => cw.CarOwners).ThenInclude(c => c.Car).ToList();
-            List<Owner> result = new List<Owner>();
-            foreach(Owner own in owners)
-            {
-                if (own.CarOwners.Any(c => c.CarId == car))
-                    result.Add(own);
-            }
-            return result;
+            return context.Owners.Select(o => o).Where(o => o.CarOwners.Any(c => c.CarId == context.Cars.First(p => p.CarNumber == carNumber).Id)).ToList();
+        }
+        public virtual List<Car> CarsByOwner (Owner owner)
+        {
+            return context.Cars.Select(c=>c).Where(o=>o.CarOwners.Any(co=>co.Owner==owner)).ToList();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TestTaskForINFOTECH.Models;
 using TestTaskForINFOTECH.Services;
 
 namespace TestTaskForINFOTECH.Controllers
@@ -26,6 +27,11 @@ namespace TestTaskForINFOTECH.Controllers
         public IActionResult OwnersByCar(string carNumber)
         {
             return Json(repository.OwnersByCar(carNumber));
+        }
+        [HttpPost]
+        public IActionResult CarsByOwner (Owner owner)
+        {
+            return Json(repository.CarsByOwner(owner));
         }
     }
 }
