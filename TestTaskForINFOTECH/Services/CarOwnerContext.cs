@@ -53,7 +53,7 @@ namespace TestTaskForINFOTECH.Services
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=InfoTech_db;Trusted_Connection=True;");
         }
 
-        private Car[] GetCars = new Car[]
+        public static readonly Car[] GetCars = new Car[]
         {
             new Car
             {
@@ -146,7 +146,7 @@ namespace TestTaskForINFOTECH.Services
                 YearOfIssue = 2009
             }
         };
-        private Owner[] GetOwners = new Owner[]
+        public static readonly Owner[] GetOwners = new Owner[]
         {
             new Owner
             {

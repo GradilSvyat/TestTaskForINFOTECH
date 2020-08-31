@@ -49,60 +49,25 @@ namespace XUnitTestForINFOTECH
         }
         private Owner testOwner ()
         {
-            return new Owner
-            {
-                FirstName = "Alex",
-                LastName = "Alexeenko",
-                Surname = "Alexeevich",
-                Id = 1,
-                IdentificationNumber = "0987654321",
-                DateOfBirth = new DateTime(1990, 1, 1)
-            };
+            return CarOwnerContext.GetOwners[0];
         }
         private List<Owner> GetListOwner ()
         {
-            return new List<Owner> { testOwner(),                 
-                new Owner
-                {
-                FirstName = "Ivan",
-                LastName = "Ivanov",
-                Surname = "Ivanovich",
-                Id = 2,
-                IdentificationNumber = "1234567890",
-                DateOfBirth = new DateTime(1995,4,4)
-                }
+            return new List<Owner> 
+            {
+               CarOwnerContext.GetOwners[0],
+               CarOwnerContext.GetOwners[1],
+               CarOwnerContext.GetOwners[2]
             };
         }
         private List<Car> GetListCars()
         {
-            return new List<Car> { 
-                new Car
-                { 
-                Brand = "BMW",
-                Model = "M5",
-                CarNumber = "AA0000AA",
-                VIN = "NNBBVVCCXX9876543",
-                Color = "Gray",
-                YearOfIssue = 2015
-                }, 
-                new Car
-                {
-                Brand = "Toyota",
-                Model = "Yaris",
-                CarNumber = "BC1111CB",
-                VIN = "ZZXXCCVVBB1234567",
-                Color = "Blue",
-                YearOfIssue = 2018
-                },  
-                new Car
-                {
-                Brand = "Ford",
-                Model = "Mondeo",
-                CarNumber = "BM2222MB",
-                VIN = "AASSDDFFGG0987654",
-                Color = "Red",
-                YearOfIssue = 2010
-                },
+            return new List<Car> 
+            {
+                CarOwnerContext.GetCars[0],
+                CarOwnerContext.GetCars[1],
+                CarOwnerContext.GetCars[2],
+                CarOwnerContext.GetCars[3]
             };
         }
     }
